@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>{$article.title}</title>
+    <meta name="keywords" content="{$article.keywords}" />
+    <meta name="description" content="{$article.desc}" />
+    <link rel="stylesheet" href="__INDEX__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__INDEX__/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="__INDEX__/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="__INDEX__/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <!--head html begin-->
+    {include file="public/header"}
+    <!--head html end-->
+    <div class="contaner-fluid">
+        <div class="row">
+            <img src="__INDEX__/images/banner999.jpg" alt="顶部banner" style="width: 100%;height: auto;">
+        </div>
+    </div>
+    <div class="cur-page container">
+        <div class="main">
+            <div class="path col-xl-4 col-lg-4 col-sm-12 col-xs-12"><a href='/'>主页</a> > {volist name="posArr" id="posCate"}
+                <a href='{:url("artlist/index",array("cid"=>$posCate["id"]))}'>{$posCate.catename}</a> > {/volist}
+            </div>
+            <ul class="cur-page-ul">
+                {volist name="subCates" id="vo"}
+                <li   {if condition="$vo.id eq $article.cateid"}class="cur-page-li active"{else/}class="cur-page-li" {/if}>
+                  <a href="{:url('artlist/index',array('cid'=>$vo['id']))}">{$vo.catename}</a></li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="padding-top:20px">
+            <div class="intro col-sm-12 col-lg-8 col-md-8">
+                <div class="news-detail">
+                    <div class="news-detail-top">
+                        <h1 class="news-detail-tit">{$article.title}</h1>
+                        <div class="news-detail-time">
+                            <span>发布时间：{$article.time|date="Y年m月d日",###}</span>
+                            <span>浏览次数：{$article.click}</span>
+                            <div class="bdsharebuttonbox">
+                                <a href="#" class="bds_more" data-cmd="more"></a>
+                                <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+                                <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+                                <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+                                <a href="#" class="bds_renren" data-cmd="renren"></a>
+                                <a href="#" class="bds_weixin" data-cmd="weixin"></a>
+                            </div>
+                            <script>
+                                window._bd_share_config = {
+                                    "common": {
+                                        "bdSnsKey": {},
+                                        "bdText": "",
+                                        "bdMini": "2",
+                                        "bdPic": "",
+                                        "bdStyle": "0",
+                                        "bdSize": "16"
+                                    },
+                                    "share": {},
+                                    "image": {
+                                        "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
+                                        "viewText": "分享到：",
+                                        "viewSize": "16"
+                                    },
+                                    "selectShare": {
+                                        "bdContainerClass": null,
+                                        "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
+                                    }
+                                };
+                                with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                            </script>
+                        </div>
+                    </div>
+                    <div class="news-detail-cont">
+                        {$article.content}
+                    </div>
+                </div>
+                <ul id="page_index">
+                    <li>上一篇：{if condition="$preArticle neq ''"}
+                        <a href="{:url('article/index',array('id'=>$preArticle.id))}">{$preArticle.title}</a> {else /} 没有上一篇了 {/if}
+                    </li>
+                    <li>下一篇：{if condition="$nextArticle neq ''"}
+                        <a href="{:url('article/index',array('id'=>$nextArticle.id))}">{$nextArticle.title}</a> {else /} 没有下一篇了 {/if}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="m_right hidden-xs">
+                    <div class="sedex_ol">
+                        <div class="sedex_ol_T"><span>最新文章</span></div>
+                        <div class="sedex_ol_box">
+                            <ul>
+                                {volist name="newArticles" id="vo"}
+                                <li><a href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a> </li>
+                                {/volist}
+                            </ul>
+                        </div>
+                        <div class="sedex_ol_TT"><span>热门头条</span></div>
+                        <div class="sedex_ol_box">
+                            <ul>
+                                {volist name="hotArticles" id="vo"}
+                                <li><a href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                                {/volist}
+                            </ul>
+                        </div>
+                        <div class="sedex_bottom"></div>
+                    </div>
+                    <div class="blank_8"></div>
+                    <div class="contact_index">
+                        <div class="sedex_tool_T">联系方式</div>
+                        <div class="contact_box">
+                            <p>
+                                <span style="font-family:Times New Roman;color:#e3014b;FONT-SIZE: 28px">4006756952<br></span>电话：13735872691<br>邮箱：2182193904@qq.com<br>地址：浙江省杭州市滨江区丹枫路676号香溢大厦19楼</p>
+                        </div>
+                        <div class="sedex_bottom"></div>
+                    </div>
+                    <div class="mr_box">
+                        <div class="ball-cont">
+                            <div class="ball-bg">
+                                <div class="axlewire-cont">
+                                    <div class="axlewire ani" style="transform: rotateX(0deg) rotateY(0deg) rotateZ(16deg);">
+                                        <div class="center"></div>
+                                        <div class="ball-shade1 ani" style="transform: rotateY(0deg);"></div>
+                                        <div class="cirh cirh1"></div>
+                                        <div class="cirh cirh2"></div>
+                                        <div class="cirh cirh3"></div>
+                                        <div class="cirh cirh4"></div>
+                                        <div class="cirv cirv1" ondragstart="return false" style="transform: rotateY(0deg) translateZ(0px);"></div>
+                                        <div class="cirv cirv4" ondragstart="return false" style="transform: rotateY(72deg) translateZ(0px);"></div>
+                                        <div class="cirv cirv2" ondragstart="return false" style="transform: rotateY(144deg) translateZ(0px);"></div>
+                                        <div class="cirv cirv5" ondragstart="return false" style="transform: rotateY(216deg) translateZ(0px);"></div>
+                                        <div class="cirv cirv3" ondragstart="return false" style="transform: rotateY(288deg) translateZ(0px);"></div>
+                                        <!--1点-->
+                                        <div class="dot-cont d1" ondragstart="return false" style="transform: rotateY(0deg) translateY(-95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/aboutUs/" target="_blank" class="info">集团简介</a>
+                                        </div>
+                                        <div class="dot-cont d1" ondragstart="return false" style="transform: rotateY(72deg) translateY(-95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/aboutUs/develop.html" target="_blank" class="info">发展历程</a>
+                                        </div>
+                                        <div class="dot-cont d1" ondragstart="return false" style="transform: rotateY(144deg) translateY(-95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/aboutUs/culture.html" target="_blank" class="info">集团文化</a>
+                                        </div>
+                                        <div class="dot-cont d1" ondragstart="return false" style="transform: rotateY(216deg) translateY(-95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/recruitment/list_page1.html" target="_blank" class="info">诚聘英才</a>
+                                        </div>
+                                        <div class="dot-cont d1" ondragstart="return false" style="transform: rotateY(288deg) translateY(-95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/aboutUs/contactUs.html" target="_blank" class="info">联系我们</a>
+                                        </div>
+
+                                        <!--点2-->
+                                        <div class="dot-cont d2 dc1">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/mdzc.html" target="_blank" class="info">明大资产</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc2">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/xingdu.html" target="_blank" class="info">星都担保</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc3">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/mdqm.html" target="_blank" class="info">明大汽车</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc4">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/zlqc.html" target="_blank" class="info">浙铃汽车</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc5">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/ctwl.html" target="_blank" class="info">钰通物流</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc6">
+                                            <div class="dot"></div>
+                                            <a href="/groupCompanys/aswl.html" target="_blank" class="info">岸上供应链</a>
+                                        </div>
+                                        <div class="dot-cont d2 dc7">
+                                            <div class="dot"></div>
+                                            <a href="/xiandai/list_page1.html" target="_blank" class="info">卡车板块</a>
+                                        </div>
+                                        <!--点3-->
+                                        <div class="dot-cont d3" ondragstart="return false" style="transform: rotateY(0deg) translateY(95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/newsCenter/list_page1.html" target="_blank" class="info">新闻中心</a>
+                                        </div>
+                                        <div class="dot-cont d3" ondragstart="return false" style="transform: rotateY(72deg) translateY(95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/services/finance.html" target="_blank" class="info">明大金融保险</a>
+                                        </div>
+                                        <div class="dot-cont d3" ondragstart="return false" style="transform: rotateY(144deg) translateY(95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/services/talent_pool.html" target="_blank" class="info">销售驾驶人才储备</a>
+                                        </div>
+                                        <div class="dot-cont d3" ondragstart="return false" style="transform: rotateY(216deg) translateY(95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/services/supply.html" target="_blank" class="info">明大供应链</a>
+                                        </div>
+                                        <div class="dot-cont d3" ondragstart="return false" style="transform: rotateY(288deg) translateY(95px) translateZ(170px);">
+                                            <div class="dot"></div>
+                                            <a href="/xiandai/list_page1.html" target="_blank" class="info">明大卡车销售</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="roaDot-cont">
+                                    <div class="roaDot rd1"></div>
+                                    <div class="roaDot rd2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧固定菜单begin-->
+    {include file="public/kefu"}
+    <!--右侧固定菜单end-->
+    {include file="public/footer"}
+</body>
+</html

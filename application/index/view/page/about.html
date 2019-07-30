@@ -1,0 +1,36 @@
+{include file="public/header"}
+<div class="banner">
+    <img src="/public/static/index/images/about_banner.gif" class="img-responsive">
+</div>
+<div class="about_title">
+    <a href="#">{$Think.lang.zhong_da_group}</a>
+    <a href="#">{$Think.lang.import_and_export}</a>
+</div>
+<div class="about_brief_bg">
+    <section class="container" id="about_brief">
+        <div class="row">
+            <h2 class="en_title col-md-12 col-lg-12">GROUP PROFILE</h2>
+            <h2 class="cn_title col-md-12 col-lg-12">{$Think.lang.group_profile}</h2>
+            <div class="about_brief col-md-12 col-lg-12">
+                {$Think.lang.group_profile_content}
+            </div>
+            <div class="about_brief_image col-md-12 col-lg-12">
+                <img src="/public/static/index/images/{$Think.lang.about_info}" class="img-responsive">
+            </div>
+        </div>
+    </section>
+</div>
+<section class="container" id="trade_brief">
+    <div class="row">
+        <h2 class="en_title">IMPORTS AND EXPORTS PROFILE</h2>
+        <h2 class="cn_title"> {$Think.lang.ports_profile}</h2>
+        <div class="col-md-6" id="trade_brief_text">
+            {$Think.lang.ports_profile_content}       
+        </div>
+        <div class="col-md-6" id="trade_image">
+            <img src="/public/static/index/images/about_trade.jpg" class="img-responsive">
+        </div>
+    </div>
+</section>
+
+{include file="public/footer"}

@@ -1,0 +1,243 @@
+{include file="public/header"}
+<div class="container-fluid">
+    <div class="row">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="/products"><img src="__INDEX__/images/{$Think.lang.banner1}"></a>
+                </div>
+                <div class="item">
+                    <a href=""><img src="__INDEX__/images/{$Think.lang.banner2}"></a>
+                </div>
+                <div class="item">
+                    <a href=""><img src="__INDEX__/images/{$Think.lang.banner3}"></a>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <section id="about_us">
+            <a class="section_title" href="/about.html">
+                <img src="__INDEX__/images/{$Think.lang.about_title}"  >
+                <!-- <img src="__INDEX__/images/about_title_m.png" class="mobile_show"> -->
+            </a>
+            <div id="compy-infos" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                {$Think.lang.home_about_us}
+            </div>
+            <div id="compy-image" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <img src="__INDEX__/images/about1.jpg" class="img-responsive">
+            </div>
+        </section>
+    </div>
+    <div class="row" id="about-img-list">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="__INDEX__/images/{$Think.lang.about_item1}">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="__INDEX__/images/{$Think.lang.about_item2}">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="__INDEX__/images/{$Think.lang.about_item3}">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="__INDEX__/images/{$Think.lang.about_item4}">
+        </div>
+    </div>
+    <p class="clear-fix"></p>
+</div>
+<div class="services_bg">
+    <div class="container">
+        <div class="row">
+            <section id="services" class="pc_show">
+                <a class="section_title" href="/about.html">
+                    <img src="__INDEX__/images/{$Think.lang.service_title}">
+                </a>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service1}">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="service_title">
+                        <a href="/services#packing_supply">
+                            <h2> {$Think.lang.integrated_supply}</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_title">
+                        <a href="/services#delivery_deadline_control">
+                            <h2>{$Think.lang.delivery_control}</h2>
+                        </a>
+                    </div>
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service2}">
+                        <div class="triangle"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service3}">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="service_title" id="more_container">
+                        <a href="/services#transportation_service">
+                            <h2>{$Think.lang.logistic_service}</h2>
+                        </a>
+                        <p id="more_services"><a href="/services">{$Think.lang.more_service}</a></p>
+                    </div>
+                </div>
+            </section>
+            <section id="services" class="mobile_show">
+                <a class="section_title" href="/about.html">
+                    <img src="__INDEX__/images/{$Think.lang.service_title}">
+                </a>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service1}">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="service_title">
+                        <a href="/services#packing_supply">
+                            <h2> {$Think.lang.integrated_supply}</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service2}">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="service_title">
+                        <a href="/services#delivery_deadline_control">
+                            <h2>{$Think.lang.delivery_control}</h2>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="service_image">
+                        <img src="__INDEX__/images/{$Think.lang.service3}">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="service_title">
+                        <a href="/services#transportation_service">
+                            <h2>{$Think.lang.logistic_service}</h2>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="products_bg">
+    <div class="container">
+        <div class="row">
+            <section id="products-container" class="index-sections">
+                <a class="section_title" href="/about.html">
+                    <img src="__INDEX__/images/{$Think.lang.products_title}"  >
+                    <!-- <img src="__INDEX__/images/products_title_m.png" class="mobile_show"> -->
+                </a>
+                <ul class="products-ul" style="overflow: hidden;">
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/242#products_brief">
+                            <img src="__INDEX__/images/product1.png">
+                        </a>
+                        <p>{$Think.lang.pipe}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/243#products_brief">
+                            <img src="__INDEX__/images/product2.png">
+                        </a>
+                        <p>{$Think.lang.fitting}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/244#products_brief">
+                            <img src="__INDEX__/images/product5.png">
+                        </a>
+                        <p>{$Think.lang.flange}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/245#products_brief">
+                            <img src="__INDEX__/images/product6.png">
+                        </a>
+                        <p>{$Think.lang.valve}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/241#products_brief">
+                            <img src="__INDEX__/images/product3.png">
+                        </a>
+                        <p>{$Think.lang.fastener}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/246#products_brief">
+                            <img src="__INDEX__/images/product4.png">
+                        </a>
+                        <p>{$Think.lang.welding_consumables}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/247#products_brief">
+                            <img src="__INDEX__/images/product7.png">
+                        </a>
+                        <p>{$Think.lang.fabricated}</p>
+                    </li>
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-list">
+                        <a href="/products/248#products_brief">
+                            <img src="__INDEX__/images/product8.png">
+                        </a>
+                        <p>{$Think.lang.others}</p>
+                    </li>
+                    <p class="clear-fix"></p>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="partner_bg">
+    <div class="container">
+        <div class="row">
+            <section class="partners">
+                <a class="section_title" href="/about.html">
+                    <img src="__INDEX__/images/{$Think.lang.partner_title}"  >
+                    <!-- <img src="__INDEX__/images/partner_title_m.png" class="mobile_show"> -->
+                </a>
+                <div id="myCarousel2" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel2" data-slide-to="1"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        {for start="0" end="count($partners)/12" step="1" name="i"}
+                        <div {if condition="$i eq 0" }class="item active" {else}class="item" {/if}> {for start=$i*12
+                            end="12" step="1" name="j" } <div class="image-item col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                            <img src="{$partners[$i*12+$j]['image']}">
+                        </div>
+                        {/for}
+                    </div>
+                    {/for}
+                </div> <!-- 轮播（Carousel）导航 -->
+        </div>
+        </section>
+    </div>
+</div>
+</div>
+{include file="public/footer"}

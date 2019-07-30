@@ -1,0 +1,225 @@
+{include file="public/header"}
+<div class="banner">
+    <img src="/public/static/index/images/product_banner.gif" class="img-responsive">
+</div>
+<div class="about_title" id="products_title">
+    <a href="#">{$Think.lang.heavy_Industry}</a>
+    <a href="#">{$Think.lang.light_Industry}</a>
+</div>
+<div class="products_back">
+    <section class="container" id="products1">
+        <div class="row">
+            <h2 class="en_title">HEAVY INDUSTRY</h2>
+            <h2 class="cn_title">{$Think.lang.heavy_Industry}</h2>
+            <h2 class="blue_title text-center">{$Think.lang.product_page_title}</h2>
+            <div id="products_brief" class="text-left">
+                {$Think.lang.product_page_content}
+            </div>
+        </div>
+    </section>
+    <section class="container" id="products_types">
+        <div class="row">
+            <div class="row">
+                <div {if condition="$cur_cate.id eq 241" }class="active type_item" {else}class="type_item" {/if}  id="product1">
+                <a href="/products/241">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.fastener}</div>
+                </a>
+            </div>
+                <div {if condition="$cur_cate.id eq 242" }class="active type_item" {else}class="type_item" {/if} id="product2">
+                <a href="/products/242">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.pipe}</div>
+                </a>
+            </div>
+                <div {if condition="$cur_cate.id eq 243" }class="active type_item" {else}class="type_item" {/if} id="product3">
+                <a href="/products/243">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.fitting}</div>
+                </a>
+            </div>
+                <div  {if condition="$cur_cate.id eq 244" }class="active type_item" {else}class="type_item" {/if} class="type_item" id="product4">
+                <a href="/products/244">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.flange}</div>
+                </a>
+            </div>
+                <div {if condition="$cur_cate.id eq 245" }class="active type_item" {else}class="type_item" {/if} class="type_item" id="product5">
+                <a href="/products/245">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.valve}</div>
+                </a>
+            </div>
+                <div  {if condition="$cur_cate.id eq 246" }class="active type_item" {else}class="type_item" {/if} class="type_item" id="product6">
+                <a href="/products/246">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.welding_consumables}</div>
+                </a>
+            </div>
+                <div {if condition="$cur_cate.id eq 247" }class="active type_item" {else}class="type_item" {/if} class="type_item" id="product7">
+                <a href="/products/247">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.fabricated}</div>
+                </a>
+            </div>
+                <div {if condition="$cur_cate.id eq 248" }class="active type_item" {else}class="type_item" {/if} id="product8">
+                <a href="/products/248">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$Think.lang.others}</div>
+                </a>
+            </div>
+            </div>
+            <!-- {volist name="cates" id="cate" key="index"}
+            <div {if condition="$cate.id eq $cur_cate.id" }class="active type_item" {else}class="type_item" {/if}
+                id="product{$index}">
+                <a href="/products/{$cate.id}">
+                    <div class="product_image"></div>
+                    <div class="product_title">{$cate.catename}</div>
+                </a>
+            </div>
+            {/volist} -->
+        </div>
+    </section>
+    {if condition="$cur_cate.id eq 241"}
+    <section class="container" id="products_list">
+        <div class="row">
+            <h3 class="blue_title crossing_title" id="main_products"
+                style="background-image: url(__INDEX__/images/main_products.gif)">{$Think.lang.main_products}</h3>
+            <div id="products_list ">
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico1.gif">
+                        </div>
+                        <div class="mask_text">
+                            {$Think.lang.chipboard_screw_content}
+                        </div>
+                    </div>  
+                    <a  class="proc_title">{$Think.lang.chipboard_screw}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico2.gif">
+                        </div>
+                        <div class="mask_text">
+                            {$Think.lang.drywall_screw_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.drywall_screw}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico3.gif">
+                        </div>
+                        <div class="mask_text">
+                                {$Think.lang.self_drilling_screw_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.self_drilling_screw}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico4.gif">
+                        </div>
+                        <div class="mask_text">
+                                {$Think.lang.bolt_nut_washer_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.bolt_nut_washer}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico5.gif">
+                        </div>
+                        <div class="mask_text">
+                                {$Think.lang.nylon_anchor_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.nylon_anchor}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico7.gif">
+                        </div>
+                        <div class="mask_text">
+                                {$Think.lang.non_standard_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.non_standard}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico8.png">
+                        </div>
+                        <div class="mask_text">
+                                {$Think.lang.package_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.package}</a>
+                </div>
+                <div class="product_item col-lg-4 col-md-4 col-sm-6  col-sm-12">
+                    <img src="/public/static/index/images/product.gif" class="img-responsive">
+                    <div class="blue_mask">
+                        <div class="product_ico">
+                                <img src="__INDEX__/images/ico6.gif">
+                        </div>
+                        <div class="mask_text">
+                            {$Think.lang.other_small_hardware_content}
+                        </div>
+                    </div>
+                    <a class="proc_title">{$Think.lang.other_small_hardware}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {/if}
+    {if condition="$Think.lang.lg eq 'zh'"}
+    <section class="container" id="product_detail_container">
+        <div class="row">
+            <h3 class="blue_title crossing_title" id="products_info"  style="background-image: url(__INDEX__/images/products_info.gif)">{$Think.lang.product_information}</h3>
+        </div>
+        <div class="row">
+            <h5 class="blue text-center border_line_gray">{$cur_cate.catename}</h5>
+        </div>
+        <div class="row" id="product_detail">
+            <div class="col-md-6" id="product_item_image">
+                <img src="/public/static/index/images/product_thumb.gif">
+            </div>
+            <div class="col-md-6" id="product_infos">
+                {$cur_cate.content}
+            </div>
+        </div>
+    </section>
+    {else}
+    <section class="container" id="product_detail_container">
+            <div class="row">
+                <h3 class="blue_title crossing_title" id="products_info"  style="background-image: url(__INDEX__/images/products_info.gif)">{$Think.lang.product_information}</h3>
+            </div>
+            <div class="row">
+                <h5 class="blue text-center border_line_gray">{$cur_cate.en_catename}</h5>
+            </div>
+            <div class="row" id="product_detail">
+                <div class="col-md-6" id="product_item_image">
+                    <img src="/public/static/index/images/product_thumb.gif">
+                </div>
+                <div class="col-md-6" id="product_infos">
+                    {$cur_cate.en_content}
+                </div>
+            </div>
+        </section>
+    {/if}
+</div>
+{include file="public/footer"}

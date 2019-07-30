@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>中达官网</title>
+    <meta name="keywords" content="浙江明大,四川现代,重庆五十铃,广汽日野,轻卡重卡牵引车" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/public/static/index/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/public/static/index/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/pc.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/mobile.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/ipad.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/animate.css" type="text/css" />
+</head>
+
+<body style="padding: 0 10px">
+    <div class="partner_brief_bg">
+        <section class="container" id="ecp_client">
+            <div class="row">
+                <h2 class="blue_title">EPC Client</h2>
+            </div>
+            <div class="client_list row">
+                {volist name="epc_clients" id="epc_client"}
+                <div class="client_item col-lg-3 col-md-3  col-sm-6  col-xs-6">
+                    <img src="{$epc_client.image}">
+                </div>
+                {/volist}
+            </div>
+            {$epc_clients->render()}
+        </section>
+    </div>
+</body>
+</html>
+<script src="/public/static/index/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/static/index/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/static/index/js/bootsnav.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/static/index/js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/static/index/js/common.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 3000
+    });
+
+    if (document.referrer) {
+        document.getElementById("homePic").style.display = 'none';
+        document.getElementById("app").style.display = 'block';
+    }
+
+    $('#homePic').on('click', function () {
+        $('#homePic').fadeOut(1500);
+        $("#app").fadeIn(1500);
+    })
+</script>

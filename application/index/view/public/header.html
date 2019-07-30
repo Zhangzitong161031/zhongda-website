@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>中达官网</title>
+    <meta name="keywords" content="浙江明大,四川现代,重庆五十铃,广汽日野,轻卡重卡牵引车" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/public/static/index/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/public/static/index/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/pc.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/mobile.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/ipad.css" type="text/css" />
+    <link rel="stylesheet" href="/public/static/index/css/animate.css" type="text/css" />
+</head>
+<body>
+    <header  >
+        <div {if condition="$Think.lang.lg eq 'en'"} class='container en_nav'{else}class='container'{/if} id="nav" style="position: static; top: 0px;">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 hidden-xs" id="log">
+                    <img src="/public/static/index/images/{$Think.lang.logo}" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-2" style="padding-right:0;padding-left:0" id="menu">
+                    <nav class="navbar navbar-default navbar-mobile bootsnav on">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#navbar-menu">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="head-logo" href="#" style="background-image: url('/public/static/index/images/logo.png');width: 188px"></a>
+                        </div>
+                        <div  id="navbar-menu" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li  {if condition="$nav_index eq 0"}class="active"{/if}>
+                                    <a href="/">{$Think.lang.home}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 235"}class="active"{/if}>
+                                    <a href="/about" > {$Think.lang.about_us}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 236"}class="active"{/if}>
+                                    <a href="/idea" >{$Think.lang.service_concept}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 237"}class="active"{/if}>
+                                    <a href="/services" >{$Think.lang.zhong_da_service}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 238"}class="active"{/if}>
+                                    <a href="/partner" >{$Think.lang.partners}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 239"}class="active"{/if}>
+                                    <a href="/products" >{$Think.lang.product_category}</a>
+                                </li>
+                                <li   {if condition="$nav_index eq 240"}class="active"{/if}>
+                                    <a href="/contact" >{$Think.lang.contact_us}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-10" id="addon_compents">
+                    <a href="" class="switch_cn" onclick="changelang('zh')">中</a>
+                    <a href="" class="switch_en"  onclick="changelang('en')">En</a>
+                    <div class="search-box">
+                        <input type="text" value="search" id="search_input">
+                        <a href="javascript:;"><i class="fa fa-search search-icon"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        function changelang(lang){
+            $.get("/index.php/index/changelang?lang="+lang,function(d){
+                location.reload();
+            })
+        }
+    </script>

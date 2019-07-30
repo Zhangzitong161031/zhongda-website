@@ -1,0 +1,37 @@
+{include file="public/header"}
+<div class="banner">
+    <img src="/public/static/index/images/partner_banner.gif" class="img-responsive">
+</div>
+<div class="partner_brief_bg">
+    <section class="container" id="end_user">
+        <div class="row">
+            <h2 class="en_title">PARTNERS</h2>
+            <h2 class="cn_title"><a>{$Think.lang.partners}</a></h2>
+            <p id="tips" class="text-center">{$Think.lang.partners_content}</p>
+            <h2 class="blue_title text-center">END USER</h2>
+            <div id="myCarousel2" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    {for start="0" end="count($end_users)/12" step="1" name="k"}
+                    <li data-target="#myCarousel2" data-slide-to="{$k}"  {if condition="$k eq 0"}class="active" {/if} ></li>
+                    {/for}
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    {for start="0" end="count($end_users)/12" step="1" name="i"}
+                    <div {if condition="$i eq 0" }class="item active" {else}class="item" {/if}>
+                         {for start=$i*12 end="12" step="1" name="j" } 
+                            <div class="image-item col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <img src="{$end_users[$i*12+$j]['image']}">
+                            </div>
+                         {/for}
+                    </div>  
+                    {/for}
+                </div> <!-- 轮播（Carousel）导航 -->
+            </div>
+        </div>
+    </section>
+    <iframe src="/partner_frame"  id="partner_frame" frameborder="1/0" name="iframe名称" scrolling="no"> </iframe>
+
+</div>
+{include file="public/footer"}

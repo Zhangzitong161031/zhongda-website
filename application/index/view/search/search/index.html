@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>搜索结果页面</title>
+    <link rel="stylesheet" href="__INDEX__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__INDEX__/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="__INDEX__/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="__INDEX__/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="__INDEX__/css/animate.css" />
+</head>
+
+<body>
+    <!--head html begin-->
+    {include file="public/header"}
+    <!--head html end-->
+    <div class="contaner-fluid">
+        <div class="row">
+            <img src="__INDEX__/images/banner999.jpg" alt="顶部banner" style="width: 100%;height: auto;">
+        </div>
+    </div>
+    <div class="cur-page container" style="margin-bottom:20px">
+        <div class="main">
+            <h4>标题搜索<span style="color:red">{$keywords}</span>的搜索结果</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="padding-top:20px">
+            <ul class="news-ul clear">
+                {volist name="arcs" id="article"}
+                <li class="news-li">
+                    <a class="news-li-a" href="{:url('article/index',array('id'=>$article['id']))}">
+                        <div class="news-li-img"> <img src="{$article.thumbnail}" /> </div>
+                        <div class="news-li-desc">
+                            <div class="news-li-tit">{$article.title}</div>
+                            <div class="news-li-time">{$article.time|date="Y-m-d",###}</div>
+                            <div class="news-li-p">{$article.desc}</div>
+                        </div>
+                    </a>
+                </li>
+                {/volist}
+                <p class="clear-fix">
+            </ul>
+        </div>
+
+        <ul class="pagelist">
+            {$arcs->render()}
+        </ul>
+    </div>
+    <!--右侧固定菜单begin-->
+    {include file="public/kefu"}
+    <!--右侧固定菜单end-->
+    {include file="public/footer"}
+</body>
+
+</html>
